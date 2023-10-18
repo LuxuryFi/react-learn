@@ -7,6 +7,7 @@
     margin: 1rem 0;
     border-radius: 12px;
     background-color: #4b4b4b;
+    padding:1rem;
   }
   
   .expense-item__description {
@@ -36,6 +37,8 @@
     border-radius: 12px;
     padding: 0.5rem;
 }
+
+
 
 @media (min-width: 500px) {
     .expense-item__description {
