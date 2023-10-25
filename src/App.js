@@ -1,8 +1,8 @@
+import { useState } from "react";
 import Expense from "./components/Expenses/Expense";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
-  console.log('Test App')
   const expenses = [
     {
       title: 'Test A',
@@ -25,15 +25,23 @@ function App() {
       date: new Date(2023, 5, 23)
     }
   ]
+  const [expenseList, setExpenseList] = useState(expenses);
 
-  const filterChangeHandler = () => {
-    
+  const filterChangeHandler = (year) => {
+    const filteredExpenses = expenses.filter((expense) => expense.date.getFullYear().toString() === year);
+    setExpenseList([...filteredExpenses]);
+    console.log(filteredExpenses)
+
+  }
+
+  const onSaveExpenseDataHandler = (expenseData) => {
+    setExpenseList([...expenseList,expenseData]);
   }
 
   return (
-    <div>
-      <NewExpense></NewExpense>
-      <Expense expenses={expenses} onFilterChange={filterChangeHandler}></Expense>
+    <div>      
+      <NewExpense onSaveExpenseData={onSaveExpenseDataHandler}></NewExpense>
+      <Expense expenses={expenseList} onFilterChange={filterChangeHandler}></Expense>
       <h2>Let's get started!</h2>
     </div>
   );
