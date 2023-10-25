@@ -15,7 +15,8 @@ export default function ExpenseItem (props) {
 
 
     return (
-        <Card className="expense-item">
+        <li>
+            <Card className="expense-item">
             <ExpenseDate date={props.expense.date}></ExpenseDate>
             <div className="expense-item__description">
                 <h2>{title}</h2>
@@ -23,6 +24,9 @@ export default function ExpenseItem (props) {
             </div>
             <button onClick={clickHandler}>Change</button>
         </Card>
+
+        </li>
+        
 
     );
 }
