@@ -25,10 +25,15 @@ function App() {
       date: new Date(2023, 5, 23)
     }
   ]
+
+  const filterChangeHandler = () => {
+    
+  }
+
   return (
     <div>
       <NewExpense></NewExpense>
-      <Expense expenses={expenses}></Expense>
+      <Expense expenses={expenses} onFilterChange={filterChangeHandler}></Expense>
       <h2>Let's get started!</h2>
     </div>
   );
