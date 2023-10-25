@@ -11,7 +11,6 @@ export default function ExpenseItem (props) {
 
     const clickHandler = () => {
         setTitle('Test')
-        console.log('Clicked')
     };
 
 
